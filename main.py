@@ -12,3 +12,5 @@ async def root():
 @app.get("/teste1")
 async def funcaoteste():
     return {"teste": True, "num_aleatorio": random.randit(0, 1000)}
+
+#bla
