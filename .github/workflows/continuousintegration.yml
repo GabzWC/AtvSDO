@@ -20,7 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Send Discord notification
-        uses: Ilshidur/action-discord@v2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@0.4.0
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "🚀 Novo push em `${{ github.repository }}` por `${{ github.actor }}`"
+          args: "🚀 Novo push em `${{ github.repository }}` por `${{ github.actor }}`"
